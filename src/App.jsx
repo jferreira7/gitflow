@@ -8,7 +8,7 @@ export default function App() {
     c3: 420, // Development
     c4: 560, // Staging
     c5: 700, // Release
-    c6: 860, // Main
+    c6: 840, // Main
   };
 
   const rows = {
@@ -146,12 +146,12 @@ export default function App() {
 
           {/* ================= LANE BACKGROUNDS (Colunas) ================= */}
           <g>
-            <rect x={cols.c1 - 50} y={15} width="100" height="710" rx="6" fill={colors.feature} fillOpacity="0.04" />
-            <rect x={cols.c2 - 50} y={15} width="100" height="710" rx="6" fill={colors.hotfix} fillOpacity="0.04" />
-            <rect x={cols.c3 - 50} y={15} width="100" height="710" rx="6" fill={colors.development} fillOpacity="0.04" />
-            <rect x={cols.c4 - 50} y={15} width="100" height="710" rx="6" fill={colors.staging} fillOpacity="0.04" />
-            <rect x={cols.c5 - 50} y={15} width="100" height="710" rx="6" fill={colors.release} fillOpacity="0.04" />
-            <rect x={cols.c6 - 50} y={15} width="100" height="710" rx="6" fill={colors.main} fillOpacity="0.05" />
+            <rect x={cols.c1 - 55} y={15} width="110" height="710" rx="6" fill={colors.feature} fillOpacity="0.04" />
+            <rect x={cols.c2 - 55} y={15} width="110" height="710" rx="6" fill={colors.hotfix} fillOpacity="0.04" />
+            <rect x={cols.c3 - 55} y={15} width="110" height="710" rx="6" fill={colors.development} fillOpacity="0.04" />
+            <rect x={cols.c4 - 55} y={15} width="110" height="710" rx="6" fill={colors.staging} fillOpacity="0.04" />
+            <rect x={cols.c5 - 55} y={15} width="110" height="710" rx="6" fill={colors.release} fillOpacity="0.04" />
+            <rect x={cols.c6 - 55} y={15} width="110" height="710" rx="6" fill={colors.main} fillOpacity="0.05" />
           </g>
 
           {/* ================= HEADERS (Pills no topo das colunas) ================= */}
@@ -163,9 +163,9 @@ export default function App() {
               
               return (
                 <g key={key}>
-                  <rect x={xPos - 45} y={rows.header - 25} width="90" height="26" rx="13" fill="#0d1117" stroke="#30363d" strokeWidth="1" />
-                  <circle cx={xPos - 32} cy={rows.header - 12} r="4.5" fill={color} />
-                  <text x={xPos - 20} y={rows.header - 12} fill="#8b949e" fontSize="10" fontWeight="500" dominantBaseline="central">{titles[i]}</text>
+                  <rect x={xPos - 50} y={rows.header - 25} width="100" height="26" rx="13" fill="#0d1117" stroke="#30363d" strokeWidth="1" />
+                  <circle cx={xPos - 37} cy={rows.header - 12} r="4.5" fill={color} />
+                  <text x={xPos - 25} y={rows.header - 12} fill="#8b949e" fontSize="10" fontWeight="500" dominantBaseline="central">{titles[i]}</text>
                 </g>
               );
             })}
