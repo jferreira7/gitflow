@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
 
+const GitNode = ({ cx, cy, color, name, branch, desc, onMouseEnter, onMouseMove, onMouseLeave }) => (
+  <g
+    className="group cursor-pointer"
+    onMouseEnter={onMouseEnter(name, branch, desc, color)}
+    onMouseMove={onMouseMove}
+    onMouseLeave={onMouseLeave}
+  >
+    <circle cx={cx} cy={cy} r="22" fill={color} opacity="0.1" filter="url(#glow-sm)" />
+    <circle className="opacity-0 group-hover:opacity-80 transition-opacity duration-200" cx={cx} cy={cy} r="21" fill="none" stroke={color} strokeWidth="2.5" />
+    <circle cx={cx} cy={cy} r="14" fill="#1c2128" stroke={color} strokeWidth="2.8" />
+    <circle cx={cx} cy={cy} r="5" fill={color} />
+  </g>
+);
+
 export default function App() {
   // Configurações de grade MANTIDAS (Eixo X e Y do fluxo correto)
   const cols = {
@@ -94,20 +108,7 @@ export default function App() {
     </defs>
   );
 
-  // Componente reutilizável para renderizar os Nós brilhantes interativos
-  const GitNode = ({ cx, cy, color, name, branch, desc }) => (
-    <g
-      className="group cursor-pointer"
-      onMouseEnter={handleMouseEnter(name, branch, desc, color)}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      <circle cx={cx} cy={cy} r="22" fill={color} opacity="0.1" filter="url(#glow-sm)" />
-      <circle className="opacity-0 group-hover:opacity-80 transition-opacity duration-200" cx={cx} cy={cy} r="21" fill="none" stroke={color} strokeWidth="2.5" />
-      <circle cx={cx} cy={cy} r="14" fill="#1c2128" stroke={color} strokeWidth="2.8" />
-      <circle cx={cx} cy={cy} r="5" fill={color} />
-    </g>
-  );
+  // GitNode is defined outside App to prevent remounting on state changes
 
   return (
     <div className="min-h-screen bg-[#0d1117] flex flex-col items-center p-8 font-mono text-[#e6edf3]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
@@ -219,13 +220,13 @@ export default function App() {
           </g>
 
           {/* ================= NODES ================= */}
-          <GitNode cx={cols.c6} cy={rows.r1} color={colors.main} name="Tag v1.0" branch="Main" desc="Versão base — origem das branches" />
-          <GitNode cx={cols.c1} cy={rows.r1} color={colors.feature} name="feature/#243" branch="Feature" desc="Nova funcionalidade em desenvolvimento" />
-          <GitNode cx={cols.c2} cy={rows.r2} color={colors.hotfix} name="hotfix/#381" branch="Hotfix" desc="Correção urgente de bug em produção" />
-          <GitNode cx={cols.c3} cy={rows.r3} color={colors.development} name="Development" branch="Development" desc="Integração de features e hotfixes" />
-          <GitNode cx={cols.c4} cy={rows.r4} color={colors.staging} name="Staging" branch="Staging" desc="Ambiente de homologação e testes" />
-          <GitNode cx={cols.c5} cy={rows.r5} color={colors.release} name="Release" branch="Release" desc="Candidato a deploy em produção" />
-          <GitNode cx={cols.c6} cy={rows.r6} color={colors.main} name="Tag v1.1" branch="Main" desc="Nova versão estável em produção" />
+          <GitNode cx={cols.c6} cy={rows.r1} color={colors.main} name="Tag v1.0" branch="Main" desc="Versão base — origem das branches" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
+          <GitNode cx={cols.c1} cy={rows.r1} color={colors.feature} name="feature/#243" branch="Feature" desc="Nova funcionalidade em desenvolvimento" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
+          <GitNode cx={cols.c2} cy={rows.r2} color={colors.hotfix} name="hotfix/#381" branch="Hotfix" desc="Correção urgente de bug em produção" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
+          <GitNode cx={cols.c3} cy={rows.r3} color={colors.development} name="Development" branch="Development" desc="Integração de features e hotfixes" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
+          <GitNode cx={cols.c4} cy={rows.r4} color={colors.staging} name="Staging" branch="Staging" desc="Ambiente de homologação e testes" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
+          <GitNode cx={cols.c5} cy={rows.r5} color={colors.release} name="Release" branch="Release" desc="Candidato a deploy em produção" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
+          <GitNode cx={cols.c6} cy={rows.r6} color={colors.main} name="Tag v1.1" branch="Main" desc="Nova versão estável em produção" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
           
         </svg>
       </div>
