@@ -221,8 +221,8 @@ export default function App() {
 
           {/* ================= NODES ================= */}
           <GitNode cx={cols.c6} cy={rows.r1} color={colors.main} name="Tag v1.0" branch="Main" desc="Versão base — origem das branches" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
-          <GitNode cx={cols.c1} cy={rows.r1} color={colors.feature} name="feature/#243" branch="Feature" desc="Nova funcionalidade em desenvolvimento" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
-          <GitNode cx={cols.c2} cy={rows.r2} color={colors.hotfix} name="hotfix/#381" branch="Hotfix" desc="Correção urgente de bug em produção" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
+          <GitNode cx={cols.c1} cy={rows.r1} color={colors.feature} name="feature/1234" branch="Feature" desc="Nova funcionalidade em desenvolvimento" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
+          <GitNode cx={cols.c2} cy={rows.r2} color={colors.hotfix} name="hotfix/4312" branch="Hotfix" desc="Correção urgente de bug em produção" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
           <GitNode cx={cols.c3} cy={rows.r3} color={colors.development} name="Development" branch="Development" desc="Integração de features e hotfixes" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
           <GitNode cx={cols.c4} cy={rows.r4} color={colors.staging} name="Staging" branch="Staging" desc="Ambiente de homologação e testes" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
           <GitNode cx={cols.c5} cy={rows.r5} color={colors.release} name="Release" branch="Release" desc="Candidato a deploy em produção" onMouseEnter={handleMouseEnter} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} />
